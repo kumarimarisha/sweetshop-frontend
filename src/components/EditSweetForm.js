@@ -1,4 +1,5 @@
 import React from 'react';
+import API_BASE_URL from "../config/api_temp.js";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { updateSweet } from '../redux/slices/sweetsSlice';
@@ -44,7 +45,7 @@ function EditSweetForm({ sweet, onClose }) {
 
       console.log('Updating sweet with token:', token.substring(0, 20) + '...');
       
-      const response = await fetch(`http://localhost:5000/api/sweets/${sweet.id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/sweets/${sweet.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

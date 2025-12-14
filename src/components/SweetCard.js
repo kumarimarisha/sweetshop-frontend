@@ -5,6 +5,7 @@ import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/mate
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function SweetCard({ sweet }) {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
