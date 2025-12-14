@@ -31,7 +31,7 @@ function AdminPanel() {
     // Fetch sweets from backend API
     const fetchSweets = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/sweets');
+        const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/sweets`);
         if (!response.ok) throw new Error('Failed to fetch sweets');
         const sweets = await response.json();
         dispatch(setSweets(sweets));

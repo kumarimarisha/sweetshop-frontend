@@ -1,5 +1,5 @@
 import React from 'react';
-import API_BASE_URL from "../config/api_temp.js";
+
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addSweet } from '../redux/slices/sweetsSlice';
@@ -30,7 +30,7 @@ function AddSweetForm({ onClose }) {
 
     try {
       const token = localStorage.getItem('firebaseToken');
-      const response = await fetch(`${API_BASE_URL}/api/sweets`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/sweets`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
